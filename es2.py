@@ -50,7 +50,7 @@ class Bitcoin(Pagamento):
     def processa(self):
         if len(self.wallet_address) >= 26 and len(self.wallet_address) <= 35:
             self.completato = True
-            wallet_finale = self.wallet_address[4:-4] #fixare
+            wallet_finale = self.wallet_address[:4] + "..." + self.wallet_address[-4:]
             print(f"Pagamento di {self.importo}€ con Bitcoin a {wallet_finale}.")
         else:
             print("Indirizzo wallet non valido.")
