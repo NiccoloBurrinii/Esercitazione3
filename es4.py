@@ -5,21 +5,21 @@ class Dipendente():
         self.__stipendio = stipendio
 
     @property 
-    def get_stipendio(self):
+    def stipendio(self):
         return self.__stipendio
     
-    @get_stipendio.setter
-    def set_stipendio(self, nuovo_stipendio):
+    @stipendio.setter
+    def stipendio(self, nuovo_stipendio):
         if nuovo_stipendio >= 0:
             self.__stipendio = nuovo_stipendio
         else:
             print("Lo stipendio non può essere negativo.")
 
     def calcola_stipendio(self):
-        return self.get_stipendio()
+        return self.stipendio
     
     def info(self):
-        print(f"Nome: {self.nome}, Codice: {self.codice}, Stipendio: {self.get_stipendio()}")
+        print(f"Nome: {self.nome}, Codice: {self.codice}, Stipendio: {self.stipendio}")
 
 class Manager(Dipendente):
     def __init__(self, nome, codice, stipendio, bonus):
@@ -27,10 +27,10 @@ class Manager(Dipendente):
         self.bonus = bonus
 
     def calcola_stipendio(self):
-        return self.get_stipendio() + self.bonus
+        return self.stipendio + self.bonus
     
     def info(self):
-        print(f"Nome: {self.nome}, Codice: {self.codice}, Stipendio: {self.get_stipendio()}, Bonus: {self.bonus}, Stipendio Totale: {self.calcola_stipendio()}")
+        print(f"Nome: {self.nome}, Codice: {self.codice}, Stipendio: {self.stipendio}, Bonus: {self.bonus}, Stipendio Totale: {self.calcola_stipendio()}")
 
 class Sviluppatore(Dipendente):
     def __init__ (self, nome, codice, stipendio, linguaggi):
